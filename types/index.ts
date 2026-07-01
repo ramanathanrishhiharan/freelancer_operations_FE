@@ -1,4 +1,3 @@
-import { number, string } from "zod";
 
 export type ProjectStatus = "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
 export type LeadStatus = "NEW" | "CONTACTED" | "QUALIFIED" | "CONVERTED" | "LOST"
@@ -38,4 +37,30 @@ export interface AuthResponse {
 export interface ApiError {
   message: string
   status: number
+}
+
+// ─── Request Bodies ───────────────────────────────────────
+export interface RegisterRequest {
+  name: string
+  email: string
+  password: string
+}
+
+export interface LoginRequest {
+  email: string
+  password: string
+}
+
+export interface ContactRequest {
+  name: string
+  email: string
+  company: string
+  type: ContactType        // reusing your union type
+}
+
+export interface ProjectRequest {
+  name: string
+  description: string
+  status: ProjectStatus    // reusing your union type
+  contactId: number
 }
