@@ -128,3 +128,38 @@
     @apply font-sans;
   }
 }
+
+/* Base font size — minimum 16px */
+/* ── Base font ─────────────────────────────────── */
+/* ── Font threading ────────────────────────────── */
+:root {
+  --active-bg: #E8E2FD;
+  --active-color: #5B2DFC;
+}
+
+html, body {
+  font-family: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 16px;
+}
+
+/* ── Sidebar overrides in oklch ─────────────────── */
+:root {
+  --sidebar:                    oklch(1 0 0);
+  --sidebar-foreground:         oklch(0.145 0 0);
+  --sidebar-primary:            oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent:             oklch(0.94 0.04 280);
+  --sidebar-accent-foreground:  oklch(0.488 0.243 264.376);
+  --sidebar-border:             oklch(0.922 0 0);
+  --sidebar-ring:               oklch(0.488 0.243 264.376);
+}
+
+.dark {
+  --sidebar:                    oklch(0.205 0 0);
+  --sidebar-foreground:         oklch(0.985 0 0);
+  --sidebar-primary:            oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent:             oklch(0.3 0.08 264);
+  --sidebar-accent-foreground:  oklch(0.85 0.06 280);
+  --sidebar-border:             oklch(1 0 0 / 10%);
+}
